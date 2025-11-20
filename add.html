@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Meds — Add Medication</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-pills me-2"></i>My Meds</a>
+            <div class="ms-auto">
+                <a class="btn btn-sm btn-outline-primary me-2" href="add.html"><i class="fas fa-plus me-1"></i>Dashboard</a>
+                <a class="btn btn-sm btn-outline-secondary me-2" href="stock.html"><i class="fas fa-list me-1"></i>Stock</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2 class="section-title">Add New Medication</h2>
+
+        <div class="card">
+            <div class="card-body">
+                <form id="add-med-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Name *</label>
+                            <input id="medName" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Generic</label>
+                            <input id="medGeneric" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Strength</label>
+                            <input id="medStrength" class="form-control" placeholder="e.g. 500mg">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Form</label>
+                            <select id="medForm" class="form-select">
+                <option value="">Select</option>
+                <option>Tablet</option><option>Capsule</option><option>Liquid</option><option>Injection</option><option>Cream</option>
+              </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Category</label>
+                            <select id="medCategory" class="form-select">
+                <option value="">Select</option>
+                <option>Analgesic</option><option>Antibiotic</option><option>Antidiabetic</option><option>Vitamin</option><option>Other</option>
+              </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Quantity *</label>
+                            <input id="medQuantity" type="number" class="form-control" min="0" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Low Stock Threshold</label>
+                            <input id="medThreshold" type="number" class="form-control" min="1" value="10">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Price (per unit)</label>
+                            <input id="medPrice" type="number" class="form-control" step="0.01" min="0">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea id="medDescription" class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Add Medication</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/add.js"></script>
+</body>
+
+</html>
