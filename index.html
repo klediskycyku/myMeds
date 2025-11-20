@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Meds — Dashboard</title>
+
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-pills me-2"></i>My Meds</a>
+            <div class="ms-auto">
+                <a class="btn btn-sm btn-outline-primary me-2" href="add.html"><i class="fas fa-plus me-1"></i>Add</a>
+                <a class="btn btn-sm btn-outline-secondary me-2" href="stock.html"><i class="fas fa-list me-1"></i>Stock</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2 class="section-title">myMeds Dashboard</h2>
+
+        <div class="row g-3 mb-4" id="cards-row">
+            <!-- cards inserted by dashboard.js -->
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-3">
+                    <div class="card-header bg-warning text-dark"><i class="fas fa-exclamation-triangle me-2"></i>Low Stock Alert</div>
+                    <div class="card-body" id="low-stock-list">
+                        <!-- low stock items -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-history me-2"></i>Recently Added</div>
+                    <div class="card-body" id="recent-list">
+                        <!-- recent meds -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-chart-pie me-2"></i>Stock Overview</div>
+                    <div class="card-body">
+                        <canvas id="stockChart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
