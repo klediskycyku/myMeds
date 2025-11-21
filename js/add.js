@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const newMed = {
             name: document.getElementById('medName').value.trim(),
-            generic: document.getElementById('medGeneric').value.trim(),
+            //generic: document.getElementById('medGeneric').value.trim(),
             strength: document.getElementById('medStrength').value.trim(),
             form: document.getElementById('medForm').value,
             category: document.getElementById('medCategory').value,
