@@ -1,8 +1,6 @@
 //dashboard.js
 document.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
-    //document.getElementById('export-data').addEventListener('click', exportData);
-    //document.getElementById('print-report').addEventListener('click', () => window.print());
 });
 
 function renderDashboard() {
@@ -51,7 +49,7 @@ function renderDashboard() {
     </div>
   `).join('') : '<p class="text-muted">All medications are well stocked!</p>';
 
-    // recent meds
+    // recent med
     const recentEl = document.getElementById('recent-list');
     const recent = [...meds].sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate)).slice(0, 5);
     recentEl.innerHTML = recent.map(m => `
@@ -79,20 +77,11 @@ function renderChart(meds) {
             labels: ['In Stock', 'Low Stock', 'Out of Stock'],
             datasets: [{
                 data: [inStock, lowStock, outStock],
-                backgroundColor: ['rgba(76,201,240,0.8)', 'rgba(247,37,133,0.8)', 'rgba(230,57,70,0.8)']
+                backgroundColor: ['rgba(59, 109, 165, 0.8)', 'rgba(249, 164, 202, 0.8)', 'rgba(229, 4, 23, 0.8)']
             }]
         },
         options: {
             plugins: { legend: { position: 'bottom' } },
         }
     });
-}
-
-function exportData() {
-    const data = readMedications();
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'my-meds-export.json';
-    a.click();
 }

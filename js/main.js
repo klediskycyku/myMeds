@@ -6,10 +6,10 @@ const STORAGE_KEY = 'my_meds_data_v1';
 function seedIfEmpty() {
     if (!localStorage.getItem(STORAGE_KEY)) {
         const sample = [
-            { id: 1, name: "Amoxicillin", generic: "Amoxicillin", strength: "500mg", form: "Capsule", category: "Antibiotic", manufacturer: "PharmaCorp", quantity: 45, threshold: 20, price: 0.85, description: "Broad-spectrum antibiotic", addedDate: "2023-10-15" },
-            { id: 2, name: "Lisinopril", generic: "Lisinopril", strength: "10mg", form: "Tablet", category: "Antihypertensive", manufacturer: "MediLife", quantity: 12, threshold: 15, price: 0.45, description: "ACE inhibitor", addedDate: "2023-10-20" },
-            { id: 3, name: "Metformin", generic: "Metformin", strength: "500mg", form: "Tablet", category: "Antidiabetic", manufacturer: "DiabetesCare", quantity: 78, threshold: 25, price: 0.32, description: "Type 2 diabetes", addedDate: "2023-10-05" },
-            { id: 4, name: "Ibuprofen", generic: "Ibuprofen", strength: "400mg", form: "Tablet", category: "Analgesic", manufacturer: "PainRelief Inc", quantity: 5, threshold: 10, price: 0.15, description: "NSAID", addedDate: "2023-10-25" }
+            { id: 1, name: "Amoxicillin", strength: "500mg", form: "Capsule", category: "Antibiotic", manufacturer: "PharmaCorp", quantity: 45, threshold: 20, price: 0.85, description: "Broad-spectrum antibiotic", addedDate: "2023-10-15" },
+            { id: 2, name: "Lisinopril", strength: "10mg", form: "Tablet", category: "Antihypertensive", manufacturer: "MediLife", quantity: 12, threshold: 15, price: 0.45, description: "ACE inhibitor", addedDate: "2023-10-20" },
+            { id: 3, name: "Metformin", strength: "500mg", form: "Tablet", category: "Antidiabetic", manufacturer: "DiabetesCare", quantity: 78, threshold: 25, price: 0.32, description: "Type 2 diabetes", addedDate: "2023-10-05" },
+            { id: 4, name: "Ibuprofen", strength: "400mg", form: "Tablet", category: "Analgesic", manufacturer: "PainRelief Inc", quantity: 5, threshold: 10, price: 0.15, description: "NSAID", addedDate: "2023-10-25" }
         ];
         localStorage.setItem(STORAGE_KEY, JSON.stringify(sample));
     }
